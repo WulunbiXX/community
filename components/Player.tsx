@@ -6,10 +6,10 @@ interface MemberPropos {
 const Player = ({ player }: MemberPropos) => {
     const { name = "--", birth = "-", from = "-", height = "-", number = "-", position = "-", pro = 0, weight = "-", imageUrl = "/images/players/default.png" } = player || {};
     return (
-        <div className="w-full flex justify-between border-b border-white/10 py-10">
+        <div className="w-full flex flex-col sm:flex-row justify-between border-b border-white/10 py-10">
             <div className="space-y-10 py-5">
                 <div className="flex space-x-5">
-                    <h3 className="text-5xl text-white font-bold">{name}</h3>
+                    <h3 className="text-3xl sm:text-5xl text-white font-bold">{name}</h3>
                     <div className="border"></div>
                     <p className="text-xl text-white mt-2">{number}</p>
                 </div>
@@ -23,12 +23,12 @@ const Player = ({ player }: MemberPropos) => {
                         <p className="text-xl text-white/80">{weight}</p>
                     </div>
                 </div>
-                <div className="flex text-s border-b text-white/50"><p> Date of Birth : </p> {birth} </div>
-                <div className="flex text-s border-b text-white/50"><p>From : </p>{from}</div>
-                <div className="flex text-s border-b text-white/50"><p>Position : </p>{position}</div>
-                <div className="flex text-s border-b text-white/50"><p>Years Pro : </p>{pro}</div>
+                <div className="flex text-s border-b sm:text-white/50 mt-80 sm:mt-0"><p> Date of Birth : </p> {birth} </div>
+                <div className="flex text-s border-b sm:text-white/50"><p>From : </p>{from}</div>
+                <div className="flex text-s border-b sm:text-white/50"><p>Position : </p>{position}</div>
+                <div className="flex text-s border-b sm:text-white/50"><p>Years Pro : </p>{pro}</div>
             </div>
-            <div className="w-auto ml-2">
+            <div className="absolute right-0 top-50 sm:top-10 -z-1 sm:relative w-auto ml-2">
                 <Image
                     src={imageUrl}
                     alt="player"
