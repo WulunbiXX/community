@@ -16,3 +16,16 @@ interface Member {
     number: string;
     imageUrl: string;
 }
+
+interface Player {
+    _id: string;
+    name: string;
+    position: string;
+    number: string;
+    birth: string;
+    from: string;
+    height: string;
+    pro: number;
+    weight: string;
+    imageUrl: string;
+}

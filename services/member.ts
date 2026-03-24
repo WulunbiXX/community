@@ -8,13 +8,19 @@ export const getMembers = async () => {
 };
 
 export const addMember = async (data: { name: string; position: string; number: string; imageUrl: string }) => {
-    const response = await fetch(`api/member/add`, {
-        method: "POST",
-        body: JSON.stringify(data),
-    });
-    if (!response.ok) {
-        throw new Error("Failed to add member");
-    }
-    const resData = await response.json();
-    return resData.data;
+  const response = await fetch(`api/member/add`, {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+  if (!response.ok) {
+    throw new Error("Failed to add member");
+  }
+  const resData = await response.json();
+  return resData.data;
 };
+
+export const getPlayer = async (id: string) => {
+  const response = await fetch(`/api/member/detail?_id=${id}`);
+  const resData = await response.json();
+  return resData.data
+}
